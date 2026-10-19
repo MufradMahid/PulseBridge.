@@ -1,0 +1,6 @@
+{
+  "name": "PulseBridge",
+  "description": "Better health understanding. Smarter next steps. Multilingual healthcare AI, anatomy explorer, and care guidance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

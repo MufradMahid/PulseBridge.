@@ -1,0 +1,29 @@
+<svg width="260" height="64" viewBox="0 0 260 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pbLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#1FD1B2" />
+      <stop offset="45%" stopColor="#2563EB" />
+      <stop offset="100%" stopColor="#4F46E5" />
+    </linearGradient>
+    <linearGradient id="pbBridgeGlow2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="rgba(255,255,255,0.2)" />
+      <stop offset="50%" stopColor="rgba(255,255,255,0.7)" />
+      <stop offset="100%" stopColor="rgba(255,255,255,0.2)" />
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle App Icon -->
+  <rect width="64" height="64" rx="16" fill="url(#pbLogoGrad)" />
+
+  <!-- Bridge Arch -->
+  <path d="M10 44 C 18 20, 46 20, 54 44" stroke="url(#pbBridgeGlow2)" stroke-width="4" stroke-linecap="round" fill="none" />
+  <path d="M12 44 C 20 23, 44 23, 52 44" stroke="rgba(255,255,255,0.3)" stroke-width="2" stroke-linecap="round" fill="none" />
+
+  <!-- ECG Pulse Line -->
+  <path d="M8 43 L 18 43 L 23 43 L 26 31 L 31 51 L 37 25 L 42 43 L 47 43 L 56 43" stroke="#FFFFFF" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Brand Typography -->
+  <text x="80" y="38" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="28" fill="#102A43" letter-spacing="-0.03em">Pulse</text>
+  <text x="156" y="38" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="800" font-size="28" fill="#3B82F6" letter-spacing="-0.03em">Bridge</text>
+  <text x="80" y="52" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="600" font-size="9.5" fill="#627D98" letter-spacing="0.26em">HEALTH CARE</text>
+</svg>
