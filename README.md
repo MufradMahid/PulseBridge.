@@ -1,410 +1,219 @@
 # PulseBridge 🫀
 
+**Better health understanding. Smarter next steps.**
 
-### Better health understanding. Smarter next steps.
-
-**PulseBridge** is an AI-powered healthcare education platform designed to help people better understand health-related information, explore the human body, and find sensible next steps through accessible, multilingual guidance.
+PulseBridge is a multilingual, AI-powered healthcare education platform designed to make health information easier to understand through conversational AI, interactive anatomy learning, quizzes, and responsible care guidance.
 
 🌐 **Live Demo:** https://pulse-bridge-86sm.vercel.app/
 
-📦 **GitHub Repository:** https://github.com/MufradMahid/PulseBridge./tree/main
+🌐 **Repository Link:** https://github.com/MufradMahid/PulseBridge./tree/main
 
-🎯 **Hackathon:** NYLP AI Hackathon 2026
+## Problem
 
-👤 **Team:** PulseForge — Solo Developer
+Reliable health information is not always easy to understand or access. Medical terminology, language barriers, and scattered online resources can make it difficult for people to understand health concerns, learn about the human body, and identify appropriate next steps.
 
----
+These challenges can affect people seeking clear, accessible health education, especially when information is unavailable in their preferred language.
 
-## 📌 Table of Contents
+PulseBridge addresses this problem by bringing understandable, multilingual health education into one accessible web application.
 
-- [About the Project](#-about-the-project)
-- [Problem Statement](#-problem-statement)
-- [Our Solution](#-our-solution)
-- [Key Features](#-key-features)
-- [Technology Stack](#-technology-stack)
-- [How AI Is Used](#-how-ai-is-used)
-- [Responsible AI, Safety, and Privacy](#-responsible-ai-safety-and-privacy)
-- [Supported Languages](#-supported-languages)
-- [Getting Started](#-getting-started)
-- [Environment Variables](#-environment-variables)
-- [Testing and Build](#-testing-and-build)
-- [Screenshots](#-screenshots)
-- [Deployment](#-deployment)
-- [Team Member Contributions](#-team-member-contributions)
-- [Limitations and Future Improvements](#-limitations-and-future-improvements)
-- [Disclaimer](#-disclaimer)
-- [License](#-license)
+## Solution
 
----
+PulseBridge combines AI-powered explanations and interactive learning tools in a single platform.
 
-## 🌍 About the Project
+Users can ask health-related educational questions, explore anatomy, take knowledge quizzes, and access general care guidance. Google Gemini powers AI-driven explanations, while Google Search grounding can provide supporting references when enabled and available.
 
-Understanding health information can be difficult, especially when information is complicated, unfamiliar, or unavailable in a person's preferred language.
+The platform supports English, Bangla, Urdu, and Japanese, helping make health education more accessible to a wider audience.
 
-PulseBridge aims to make health education easier to access and understand through an interactive web experience that combines AI-powered explanations, educational tools, and responsible health guidance.
+**PulseBridge is a health literacy tool, not a medical diagnosis system or a replacement for qualified healthcare professionals.**
 
-The platform is designed to support health literacy—not to replace qualified healthcare professionals.
+## Features
 
-## ❗ Problem Statement
+- **AI-powered health education:** Get accessible explanations of general health topics through a conversational interface.
+- **Multilingual support:** Use the platform in English, Bangla, Urdu, and Japanese.
+- **Interactive anatomy learning:** Explore educational content about the human body and its systems.
+- **Health knowledge quizzes:** Reinforce learning and test your understanding of health-related topics.
+- **Care guidance:** Get general educational information about possible next steps and preparing questions for a healthcare professional.
+- **Source-supported responses:** Google Search grounding can help provide relevant external references when supported by the configured AI workflow.
+- **Responsible AI approach:** Emphasizes the limits of AI-generated information and the importance of professional medical care.
+- **Responsive interface:** Designed for a modern, accessible web experience across different screen sizes.
+- **Server-side AI integration:** Backend API routes handle AI requests so API credentials can remain outside client-side code.
 
-Many people struggle to understand health-related information because:
+## Tech Stack
 
-- Medical terminology can be difficult to understand.
-- Reliable information can be hard to interpret without medical knowledge.
-- Language barriers can make health education less accessible.
-- People may be unsure when symptoms require professional attention.
-- Traditional health information websites may offer limited interactive learning experiences.
+- **Frontend:** React 19, TypeScript
+- **Build Tool:** Vite 8
+- **Styling:** Tailwind CSS v4
+- **Icons and UI:** Lucide React, Motion
+- **Backend:** Node.js, Express
+- **AI SDK:** `@google/genai`
+- **AI Provider:** Google Gemini API
+- **Deployment:** Vercel
+- **Testing:** Node.js test runner (`node:test`) and TypeScript compiler (`tsc`), as configured in the project
 
-These challenges can make it harder for people to understand health topics and prepare informed questions for healthcare professionals.
+## AI / API Usage
 
-## 💡 Our Solution
+PulseBridge integrates Google's Gemini API to support AI-powered health education and selected explanatory features.
 
-PulseBridge brings healthcare education tools together in one accessible platform.
+**AI models reported for the project:**
 
-Users can ask health-related educational questions, explore anatomy, test their knowledge with quizzes, and receive guidance about sensible next steps.
+- Primary model: `gemini-2.5-flash`
+- Automatic fallback models: `gemini-2.0-flash` and `gemini-2.0-flash-lite`
+- Educational fallback: A deterministic multilingual knowledge engine when configured AI services are unavailable or quota limits are reached.
 
-AI-generated responses are intended to explain information in understandable language, communicate uncertainty, and encourage professional care when appropriate.
+Model availability and fallback behavior depend on the deployed configuration and current provider access.
 
-The goal is to help users become better informed—not to diagnose medical conditions.
+**API and SDK:**
 
----
+- Google Gemini API
+- Official `@google/genai` TypeScript SDK
+- Google Search grounding, where configured and supported
 
-## ✨ Key Features
+**Application API endpoints:**
 
-### 🤖 AI-Powered Health Education
+| Endpoint                    | Purpose                                                     |
+| --------------------------- | ----------------------------------------------------------- |
+| `POST /api/chat`            | Health-related educational conversations                    |
+| `POST /api/anatomy-explain` | Educational explanations of anatomy and physiology          |
+| `POST /api/care-guidance`   | General care guidance and preparation for healthcare visits |
+| `GET /api/health`           | Application health status, as implemented in the backend    |
 
-Ask health-related questions and receive AI-generated educational explanations designed to make complex information easier to understand.
+**Typical AI workflow:**
 
-### 🌐 Multilingual Experience
+1. The user submits a question or selects an educational feature.
+2. The frontend sends the request to the backend.
+3. The backend calls the configured AI model when available.
+4. Where supported, grounding metadata can provide relevant source references.
+5. The response is returned to the user, with a fallback response used where implemented if AI services are unavailable.
 
-PulseBridge supports a multilingual experience, including English, Bangla, Urdu, and Japanese.
+AI-generated health information can be incomplete or inaccurate. PulseBridge is intended for education and does not provide a confirmed medical diagnosis.
 
-### 🫀 Interactive Anatomy Explorer
+## Setup Instructions
 
-Explore educational information about human anatomy through an interactive learning experience.
+### 1. Clone the repository
 
-### 🧠 Health Knowledge Quizzes
-
-Use quizzes to reinforce learning and improve understanding of health-related topics.
-
-### 🔎 Grounded Information Where Supported
-
-Google Search grounding can be used with supported AI requests to help connect responses to web information. Source references should be displayed only when genuine grounding metadata is returned.
-
-### 🩺 Responsible Care Guidance
-
-The application is designed to encourage appropriate professional medical care and highlight potentially urgent situations rather than presenting itself as a diagnostic system.
-
-### 📱 Modern User Experience
-
-A responsive interface uses a sky-blue color palette and a liquid-glass-inspired visual style to create a clean, approachable healthcare education experience.
-
----
-
-## 🛠️ Technology Stack
-
-PulseBridge uses a web application architecture. Confirm package names and versions against the current repository before submission.
-
-| Area                  | Technology                                              |
-| --------------------- | ------------------------------------------------------- |
-| Frontend              | React                                                   |
-| Development and build | Vite                                                    |
-| Styling               | Tailwind CSS                                            |
-| Backend               | Node.js and Express                                     |
-| AI provider           | Google Gemini API                                       |
-| AI SDK                | `@google/genai`                                         |
-| Search grounding      | Google Search grounding, where configured and supported |
-| Deployment            | Vercel                                                  |
-| Programming language  | JavaScript / JSX                                        |
-
-The backend handles AI API requests so that the Gemini API key can remain server-side rather than being exposed in browser code.
-
----
-
-## 🧠 How AI Is Used
-
-PulseBridge integrates Google's Gemini API to generate health education responses and support selected educational features.
-
-### AI Workflow
-
-1. A user submits a health-related question or requests an educational explanation.
-2. The frontend sends the request to the application backend.
-3. The backend processes the request and calls the configured Gemini model.
-4. Where enabled and supported, Google Search grounding can provide additional information for the response.
-5. The application returns the result to the frontend for display.
-
-### Backend API Endpoints
-
-The following endpoints are documented for the application. Confirm that their names match the current backend implementation.
-
-| Endpoint               | Purpose                                           |
-| ---------------------- | ------------------------------------------------- |
-| `/api/chat`            | AI-powered health education conversations         |
-| `/api/anatomy-explain` | Educational anatomy explanations                  |
-| `/api/care-guidance`   | Health-related guidance and next-step information |
-| `/api/health`          | Application health check, if implemented          |
-
-### AI Model and API Usage
-
-- **AI provider:** Google Gemini
-- **SDK:** `@google/genai`
-- **Model identifier:** The exact model configured in the backend
-- **Search grounding:** Used where configured and supported
-- **API credentials:** Configured through a server-side environment variable
-
-The model identifier should match the one actually used by the deployed application.
-
-### Grounding and Source References
-
-When Google Search grounding is enabled, source references should be based on metadata returned by the API. The application should not fabricate citations or imply that information has been independently verified when no source metadata is available.
-
-AI-generated content can still be incomplete or inaccurate, even when grounding is available.
-
----
-
-## 🛡️ Responsible AI, Safety, and Privacy
-
-Healthcare information requires careful handling. PulseBridge is intended for educational purposes and general guidance, not medical diagnosis or treatment.
-
-### Safety Principles
-
-- Do not present the application as a replacement for a licensed healthcare professional.
-- Do not claim that AI responses provide a confirmed diagnosis.
-- Avoid unsupported treatment recommendations and prescription or dosage instructions.
-- Communicate uncertainty when available information is insufficient.
-- Encourage users to consult qualified healthcare professionals for personal medical concerns.
-- Treat potentially serious symptoms as reasons to seek appropriate urgent medical care.
-- Ensure emergency instructions and contact information are appropriate to the user's actual location.
-
-AI-generated responses are not guaranteed to be correct, complete, or appropriate for every person.
-
-### Privacy Principles
-
-PulseBridge aims to follow privacy-conscious practices when handling user conversations.
-
-- Keep API credentials on the server.
-- Avoid persistent storage of health conversations unless the application explicitly implements and discloses it.
-- Avoid logging full health messages or unnecessary sensitive information.
-- Be transparent about data processing performed by the application and third-party providers.
-
-These statements should reflect the actual implementation and the data-handling practices of any external AI services used by the application.
-
----
-
-## 🌐 Supported Languages
-
-PulseBridge is designed to support:
-
-- English
-- Bangla
-- Urdu
-- Japanese
-
-Language availability and response quality may vary by feature and language. A user's selected language does not necessarily indicate their country or emergency-service location.
-
----
-
-## 🚀 Getting Started
-
-Follow these instructions to run PulseBridge locally.
-
-### Prerequisites
-
-Install:
-
-- Node.js, using a version supported by the project
-- npm
-- A Google Gemini API key for live Gemini-powered features
-
-### 1. Clone the Repository
-
-If your GitHub repository is named `PulseBridge` and the URL below is correct, run:
+Copy the correct clone URL from the repository's GitHub **Code** button, then run:
 
 ```bash
-git clone https://github.com/MufradMahid/PulseBridge./tree/main
+git clone <YOUR_GITHUB_REPOSITORY_URL>
 cd PulseBridge
 ```
 
-If GitHub shows a different repository URL, copy the correct URL from the repository's **Code** button and use that instead.
+Replace `<YOUR_GITHUB_REPOSITORY_URL>` with your actual Git repository URL. Do not use a GitHub `/tree/main` webpage URL as the clone URL.
 
-### 2. Install Dependencies
+### 2. Install dependencies
+
+Make sure Node.js and npm are installed, then run:
 
 ```bash
 npm install
 ```
 
-### 3. Configure Environment Variables
+### 4. Run the app
 
-Create a `.env` file in the project root and add the environment variable expected by your backend:
-
-```env
-```
-
-Replace the example value with your own API key.
-
-**Never commit your actual API key to GitHub.**
-
-### 4. Start the Development Server
-
-If your `package.json` defines the `dev` script, run:
+Start the development server using the script defined in your `package.json`:
 
 ```bash
 npm run dev
 ```
 
-### 5. Build the Application
+To create a production build:
 
 ```bash
 npm run build
 ```
 
-If your project defines a production start script, you can also run:
+Available scripts can vary by project configuration. Check `package.json` if a command is not defined.
 
-```bash
-npm start
-```
+## Screenshots
 
-Check the `scripts` section of `package.json` to confirm which commands your project supports.
+<img width="1920" height="2397" alt="1" src="https://github.com/user-attachments/assets/619bb2b2-dcdb-47fc-8440-7cf7778b346f" />
 
----
+<img width="1920" height="1924" alt="2" src="https://github.com/user-attachments/assets/4f24b932-b4ab-49a8-92b2-721063fe071e" />
 
-## 🔐 Environment Variables
+<img width="1920" height="2051" alt="3" src="https://github.com/user-attachments/assets/71b274ed-caf2-4354-b24c-9107a2d5db83" />
 
-| Variable         | Purpose                                      | Required                                   |
-| ---------------- | -------------------------------------------- | ------------------------------------------ |
-| `GEMINI_API_KEY` | Authenticates server-side requests to Gemini | Yes, for live Gemini-powered functionality |
+<img width="1920" height="2016" alt="4" src="https://github.com/user-attachments/assets/7fdffc56-6290-4500-9bcf-c271bf4e9a5b" />
 
-For local development, configure environment variables in a local `.env` file. For deployment, configure them in your hosting provider's project settings.
+<img width="1920" height="1901" alt="5" src="https://github.com/user-attachments/assets/ee81829e-a055-4f04-b1a4-a8a12a8bae45" />
 
-Do not expose API keys through frontend code, public repositories, screenshots, or logs.
+<img width="1918" height="942" alt="6" src="https://github.com/user-attachments/assets/74660c8b-3752-4d00-8a1f-f68b9b1f896d" />
 
----
+<img width="1911" height="936" alt="7" src="https://github.com/user-attachments/assets/6c98102b-7852-442b-9160-91798f7dcda9" />
+<img width="1919" height="934" alt="8" src="https://github.com/user-attachments/assets/7c52fc2f-6515-4a75-b4d9-f85a11d75585" />
 
-## 🧪 Testing and Build
+<img width="1919" height="953" alt="9" src="https://github.com/user-attachments/assets/fe1e0c92-a7e2-4faf-9fa6-cf7867e57d8c" />
 
-Before submitting PulseBridge, verify the following:
+<img width="1920" height="1406" alt="10" src="https://github.com/user-attachments/assets/ca4ed97a-3bfa-4a33-b13e-4434678bee2c" />
 
-- [x] Dependencies install successfully.
-- [x] The production build completes.
-- [x] The deployed website loads correctly.
-- [x] AI requests return appropriate responses.
-- [x] API failures and rate limits are handled appropriately.
-- [x] Missing or invalid API credentials are handled safely.
-- [x] Supported language selections work as expected.
-- [x] Anatomy and quiz features function correctly.
-- [x] Safety guidance is displayed appropriately.
-- [x] API keys are not exposed in the frontend.
-- [x] All links and screenshots in the README work.
+<img width="1920" height="1430" alt="11" src="https://github.com/user-attachments/assets/ef468e5c-3c45-455f-9e00-1aa6aa109496" />
 
-If automated tests are available, run the test command defined in `package.json` and document the actual results. Only include test counts that have been verified.
+<img width="1920" height="1013" alt="12" src="https://github.com/user-attachments/assets/3f603fa8-8486-4906-9c6c-79d6bc44dd93" />
 
----
+<img width="1920" height="1003" alt="13" src="https://github.com/user-attachments/assets/a3febe9d-5e5b-4f14-89e7-d6aafeebf980" />
 
-## 📸 Screenshots
+<img width="1920" height="5561" alt="14" src="https://github.com/user-attachments/assets/e8a2d385-d239-4664-a8d3-00068d471471" />
 
-The following screenshots demonstrate the PulseBridge interface.
-
-<img width="1920" height="2397" alt="1" src="https://github.com/user-attachments/assets/c9d09db1-d6f6-4d15-8478-47c03b2a2dd0" />
-
-<img width="1920" height="1924" alt="2" src="https://github.com/user-attachments/assets/3d316229-9a7b-4e9e-876f-efb25068b47d" />
-
-<img width="1920" height="2051" alt="3" src="https://github.com/user-attachments/assets/5592ad33-2d1d-47f4-9b8e-1954f3707311" />
-
-<img width="1920" height="2016" alt="4" src="https://github.com/user-attachments/assets/bf46b549-b1be-4390-8b6c-f01bde274036" />
-
-<img width="1920" height="1901" alt="5" src="https://github.com/user-attachments/assets/ba76dba2-8ceb-45fd-b239-198bc4d93eef" />
-
-<img width="1918" height="942" alt="6" src="https://github.com/user-attachments/assets/9aaacb31-478c-4f58-9221-23a308e27b18" />
-
-<img width="1911" height="936" alt="7" src="https://github.com/user-attachments/assets/a79e2ace-7ef8-49f0-8e00-a5c6a4f5f4ee" />
-
-<img width="1919" height="934" alt="8" src="https://github.com/user-attachments/assets/a73a0949-f6a4-40e7-9717-36f1953aab59" />
-
-<img width="1919" height="953" alt="9" src="https://github.com/user-attachments/assets/0246755a-c601-44b1-9727-308d0d019cf4" />
-
-<img width="1920" height="1406" alt="10" src="https://github.com/user-attachments/assets/76d4e684-8482-48b2-88fc-597b3fbb1f75" />
-
-<img width="1920" height="1430" alt="11" src="https://github.com/user-attachments/assets/f8342e21-8ffe-4c7a-acf8-a3f2ddef4fad" />
-
-<img width="1920" height="1013" alt="12" src="https://github.com/user-attachments/assets/dade8294-1cc0-4682-a562-e9156deb28d8" />
-
-<img width="1920" height="1003" alt="13" src="https://github.com/user-attachments/assets/d621c6b6-54a6-4efd-83aa-53000d06af5d" />
-
-<img width="1920" height="5561" alt="14" src="https://github.com/user-attachments/assets/cf923fed-5c7f-48c0-85ef-656235fa4ad4" />
-
-<img width="1920" height="6440" alt="15" src="https://github.com/user-attachments/assets/4bd10380-adc9-463b-a667-186b5bf26136" />
+<img width="1920" height="6440" alt="15" src="https://github.com/user-attachments/assets/3c1c5ab9-a8a2-476d-af35-1a9fc2ea62a1" />
 
 
 
----
 
-## ☁️ Deployment
 
-PulseBridge is deployed on Vercel.
 
-**Live Application:**
+
+
+
+
+
+
+### Main Interface
+
+[https://pulse-bridge-86sm.vercel.app/](https://pulse-bridge-86sm.vercel.app/)
+<img width="1920" height="2397" alt="1" src="https://github.com/user-attachments/assets/aebbc1b3-7e63-4a8a-a903-11259918d4c9" />
+
+
+
+### AI Health
+
+[https://pulse-bridge-86sm.vercel.app/](https://pulse-bridge-86sm.vercel.app/)
+<img width="1919" height="934" alt="8" src="https://github.com/user-attachments/assets/77bc2219-f5bb-478a-8a11-ae3f2709aa81" />
+<img width="1919" height="953" alt="9" src="https://github.com/user-attachments/assets/598aea87-4dfe-4d55-a436-4964eea4ee44" />
+
+
+
+
+### Interactive Anatomy and Quizzes
+
 [https://pulse-bridge-86sm.vercel.app/](https://pulse-bridge-86sm.vercel.app/)
 
-**Vercel Project Dashboard:**
-[https://vercel.com/mahid1/pulse-bridge-86sm](https://vercel.com/mahid1/pulse-bridge-86sm)
+<img width="1920" height="1406" alt="10" src="https://github.com/user-attachments/assets/23782439-492f-469d-8e1a-a1be252242f3" />
 
-The live application link is intended for judges and users. The Vercel dashboard may require account permissions.
+<img width="1920" height="1013" alt="12" src="https://github.com/user-attachments/assets/04d01fa8-9d21-4ed5-aeea-32a811cc713d" />
 
-For deployment:
 
-1. Connect the correct repository to the Vercel project.
-2. Configure the required environment variables.
-3. Ensure build settings match the application configuration.
-4. Redeploy after changing environment variables or application code.
-5. Test the live website and its AI features after deployment.
+<img width="1920" height="1003" alt="13" src="https://github.com/user-attachments/assets/4c92de3b-d4bc-4c0a-a9c6-f7a8b1967e69" />
 
-Never include private dashboard credentials, API keys, or access tokens in the repository.
 
----
 
-## 👨‍💻 Team Member Contributions
 
-**Solo Developer — Quazi Mufrad Mahid**
+## Team Contributions
 
-Responsible for the complete development of PulseBridge, including:
+**Team Name:** PulseForge
+**Team Size:** 1 — Solo Developer
+**Developer:** Quazi Mufrad Mahid
 
-- **Product Design & UI/UX:** Designed and built the user interface and responsive user experience.
-- **Frontend Development:** Implemented the healthcare education interface, multilingual support, interactive anatomy explorer, and quizzes.
-- **Backend Development:** Developed the server-side API endpoints and integrated the AI services.
-- **AI Integration:** Integrated the Gemini API for AI-powered health education and implemented Google Search grounding where supported.
-- **Safety & Privacy:** Implemented health-related safety boundaries, emergency guidance, and privacy-conscious handling of conversations.
-- **Testing & Deployment:** Tested the application, resolved deployment issues, and deployed the live application.
+As the solo developer, I independently handled the design, development, AI integration, testing, and deployment of PulseBridge.
 
-All project development and implementation were completed independently as a solo participant.
+- **Product Design and UI/UX:** Designed and implemented the user interface and responsive experience.
+- **Frontend Development:** Built the application interface, multilingual experience, anatomy learning features, and quizzes.
+- **Backend Development:** Integrated server-side API routes and connected the frontend to AI services.
+- **AI Integration:** Integrated the Gemini API and supporting educational workflows.
+- **Safety Considerations:** Designed the platform around health education rather than medical diagnosis.
+- **Testing and Deployment:** Debugged application and deployment issues and deployed the live product on Vercel.
+
+**Project:** NYLP AI Hackathon 2026
+**Live Application:** [https://pulse-bridge-86sm.vercel.app/](https://pulse-bridge-86sm.vercel.app/)
 
 ---
 
-## 🔭 Limitations and Future Improvements
-
-Potential future improvements include:
-
-- Expanding health education topics and learning activities.
-- Improving factual accuracy evaluation across supported languages.
-- Making source references and uncertainty easier to understand.
-- Improving accessibility for a wider range of users.
-- Expanding automated tests for API behavior, safety boundaries, and multilingual experiences.
-- Further strengthening privacy documentation and validation of emergency guidance.
-
-These are potential future improvements, not claims that the features are already implemented.
-
----
-
-## ⚠️ Disclaimer
-
-PulseBridge is an educational application. It does not provide a medical diagnosis, replace professional medical advice, or guarantee the accuracy of AI-generated information.
-
-Do not delay emergency care or professional medical assessment because of information received from this application. In an emergency, contact the appropriate local emergency service.
-
----
-
-##
-
----
-
-**PulseBridge — Better health understanding. Smarter next steps.**
-
+*PulseBridge — Better health understanding. Smarter next steps.*
