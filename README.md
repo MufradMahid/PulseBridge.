@@ -304,23 +304,36 @@ If automated tests are available, run the test command defined in `package.json`
 
 The following screenshots demonstrate the PulseBridge interface.
 
+<img width="1920" height="2397" alt="1" src="https://github.com/user-attachments/assets/c9d09db1-d6f6-4d15-8478-47c03b2a2dd0" />
 
+<img width="1920" height="1924" alt="2" src="https://github.com/user-attachments/assets/3d316229-9a7b-4e9e-876f-efb25068b47d" />
 
-<img width="1920" height="5561" alt="screencapture-pulse-bridge-86sm-vercel-app-2026-10-19-15_19_14" src="https://github.com/user-attachments/assets/edbad06f-d796-4c90-b821-7ab601122c98" />
-<img width="1920" height="1003" alt="screencapture-pulse-bridge-86sm-vercel-app-2026-10-19-15_19_00" src="https://github.com/user-attachments/assets/d9e2658b-b723-414f-b07b-5621f287c249" />
-<img width="1920" height="1013" alt="screencapture-pulse-bridge-86sm-vercel-app-2026-10-19-15_18_12" src="https://github.com/user-attachments/assets/3c65d9a9-e809-40d9-9b33-70880d0d0f67" />
-<img width="1920" height="1430" alt="screencapture-pulse-bridge-86sm-vercel-app-6" src="https://github.com/user-attachments/assets/518a3b3c-86aa-48b7-9259-51fc5f2ba6ca" />
-<img width="1920" height="1406" alt="screencapture-pulse-bridge-86sm-vercel-app-5" src="https://github.com/user-attachments/assets/ef50082f-eee5-40c5-b610-d1c60a90770b" />
-<img width="1919" height="953" alt="screencapture-pulse-bridge-86sm-vercel-app-4" src="https://github.com/user-attachments/assets/01a2f1e7-a6fc-4185-beea-d770b7e350b5" />
-<img width="1919" height="934" alt="screencapture-pulse-bridge-86sm-vercel-app-3" src="https://github.com/user-attachments/assets/05c38e06-64c4-4935-8839-c7aba1bda1d6" />
-<img width="1911" height="936" alt="screencapture-pulse-bridge-86sm-vercel-app-2" src="https://github.com/user-attachments/assets/6a5663d6-cb01-4129-b257-0b3eb17ce09a" />
-<img width="1918" height="942" alt="screencapture-pulse-bridge-86sm-vercel-app-1" src="https://github.com/user-attachments/assets/dcd36d6c-ae75-4c78-afd1-1fedeacce8d6" />
-<img width="1920" height="2397" alt="screencapture-pulse-bridge-86sm-vercel-app-2026-10-19-15_21_37" src="https://github.com/user-attachments/assets/baac8cf0-bd9e-44a6-ba16-a02abbed8f09" />
-<img width="1920" height="1901" alt="screencapture-pulse-bridge-86sm-vercel-app-2026-10-19-15_21_23" src="https://github.com/user-attachments/assets/3c6a5a47-e783-4720-9162-8743648d0f34" />
-<img width="1920" height="2016" alt="screencapture-pulse-bridge-86sm-vercel-app-2026-10-19-15_21_07" src="https://github.com/user-attachments/assets/4aa304d2-96df-4c3f-b176-45b76298e183" />
-<img width="1920" height="2051" alt="screencapture-pulse-bridge-86sm-vercel-app-2026-10-19-15_20_51" src="https://github.com/user-attachments/assets/57b458af-5986-489d-95ba-43681e2b40f8" />
-<img width="1920" height="1924" alt="screencapture-pulse-bridge-86sm-vercel-app-2026-10-19-15_20_30" src="https://github.com/user-attachments/assets/fe60db86-f8d6-48df-8c09-ec401155b498" />
-<img width="1920" height="6440" alt="screencapture-pulse-bridge-86sm-vercel-app-2026-10-19-15_19_55" src="https://github.com/user-attachments/assets/c5660d75-7cda-4bc8-a2f6-a5564eab1808" />
+<img width="1920" height="2051" alt="3" src="https://github.com/user-attachments/assets/5592ad33-2d1d-47f4-9b8e-1954f3707311" />
+
+<img width="1920" height="2016" alt="4" src="https://github.com/user-attachments/assets/bf46b549-b1be-4390-8b6c-f01bde274036" />
+
+<img width="1920" height="1901" alt="5" src="https://github.com/user-attachments/assets/ba76dba2-8ceb-45fd-b239-198bc4d93eef" />
+
+<img width="1918" height="942" alt="6" src="https://github.com/user-attachments/assets/9aaacb31-478c-4f58-9221-23a308e27b18" />
+
+<img width="1911" height="936" alt="7" src="https://github.com/user-attachments/assets/a79e2ace-7ef8-49f0-8e00-a5c6a4f5f4ee" />
+
+<img width="1919" height="934" alt="8" src="https://github.com/user-attachments/assets/a73a0949-f6a4-40e7-9717-36f1953aab59" />
+
+<img width="1919" height="953" alt="9" src="https://github.com/user-attachments/assets/0246755a-c601-44b1-9727-308d0d019cf4" />
+
+<img width="1920" height="1406" alt="10" src="https://github.com/user-attachments/assets/76d4e684-8482-48b2-88fc-597b3fbb1f75" />
+
+<img width="1920" height="1430" alt="11" src="https://github.com/user-attachments/assets/f8342e21-8ffe-4c7a-acf8-a3f2ddef4fad" />
+
+<img width="1920" height="1013" alt="12" src="https://github.com/user-attachments/assets/dade8294-1cc0-4682-a562-e9156deb28d8" />
+
+<img width="1920" height="1003" alt="13" src="https://github.com/user-attachments/assets/d621c6b6-54a6-4efd-83aa-53000d06af5d" />
+
+<img width="1920" height="5561" alt="14" src="https://github.com/user-attachments/assets/cf923fed-5c7f-48c0-85ef-656235fa4ad4" />
+
+<img width="1920" height="6440" alt="15" src="https://github.com/user-attachments/assets/4bd10380-adc9-463b-a667-186b5bf26136" />
+
 
 
 ---
